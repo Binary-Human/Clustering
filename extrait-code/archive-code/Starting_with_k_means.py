@@ -46,8 +46,6 @@ def run_clustering(path, name, k, showplot):
 
 
     with open('results.csv', 'a', newline='') as results_file:
-        results_writer = csv.writer(results_file)
-
         # Write headers for the CSV files
         # Leave out but need to write beforehand
         # results_writer.writerow(['k', 'runtime_ms','inertia' ])
@@ -67,6 +65,7 @@ def run_clustering(path, name, k, showplot):
         runtime = round((tps2 - tps1)*1000,2)
 
         # Entering data
+        results_writer = csv.writer(results_file)
         results_writer.writerow([k, runtime, inertie])
         print( runtime, ", ", inertie)  
 

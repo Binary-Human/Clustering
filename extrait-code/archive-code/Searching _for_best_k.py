@@ -14,7 +14,11 @@ from sklearn import metrics
 
 from Starting_with_k_means import run_clustering
 
+with open('results.csv', 'w', newline='') as results_file :
+    writer = csv.writer(results_file)
 
+    writer.writerow(['k', 'runtime_ms', 'inertia'])
+    results_file.close()
 
 # Define the range of clusters k to test
 k_values = range(2, 11)  # You can adjust the range depending on your needs
@@ -29,6 +33,7 @@ data = pd.read_csv("results.csv")
 k_values = data['k']              # Number of clusters
 runtime = data['runtime_ms']    # Runtime in milliseconds
 inertia = data['inertia']         # Inertia
+
 
 # Step 3: Create the first plot (Inertia vs K)
 plt.figure(figsize=(10, 6))
