@@ -6,11 +6,10 @@ from scipy.io import arff
 from sklearn import cluster
 from sklearn import metrics
 from scipy.cluster.hierarchy import dendrogram
+from sklearn import neighbors
 
 ##################################################################
 # Exemple :  Dendrogramme and Agglomerative Clustering
-
-
 
 path = './artificial/'
 name="xclara.arff"

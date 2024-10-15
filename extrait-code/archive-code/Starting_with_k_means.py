@@ -20,9 +20,9 @@ from sklearn import metrics
 # Exemple :  k-Means Clustering
 
 _path = './artificial/'
-_name="xclara.arff"
+_name="banana.arff"
 
-def run_clustering(path, name, k, showplot):
+def run_KMEANS_clustering(path, name, k, showplot):
     #path_out = './fig/'
     databrut = arff.loadarff(open(path+str(name), 'r'))
     datanp = np.array([[x[0],x[1]] for x in databrut[0]])
@@ -85,4 +85,4 @@ def run_clustering(path, name, k, showplot):
             print(dists)
 
 
-#run_clustering(_path, _name, 3, 1)
+run_KMEANS_clustering(_path, _name, 2, 1)
