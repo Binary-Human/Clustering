@@ -51,7 +51,7 @@ def distanceToNeighbors(path, name, v, showplot) :
         plt.plot(distancetrie)
         plt.show()
 
-    return math.floor(np.percentile(distancetrie,98))
+    return np.percentile(distancetrie,98)
 
 
 

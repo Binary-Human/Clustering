@@ -14,7 +14,9 @@ from sklearn import metrics
 
 from Starting_with_k_means import run_KMEANS_clustering
 
-import kneed
+from kneed import DataGenerator, KneeLocator
+
+import sys
 
 _path = './extrait-code/artificial/'
 _name="banana.arff"
@@ -60,10 +62,7 @@ def search_k(path, name, showplot):
         plt.grid(True)
         plt.legend()
         plt.show()
+    kneedle = KneeLocator(k_values, inertia, S= 1, curve='convex', direction='decreasing')  
+    return kneedle.knee
 
-    # TODO: Implement Elbow method hack
-    return np.percentile(inertia,98)
-    # KneeLocator(range(1, len(inertias) + 1), inertias, curve='convex', direction='decreasing')
-    # kneedle.elbow
-
-search_k(_path, _name, 1)
+# print(search_k(_path, "xclara.arff" , 1))

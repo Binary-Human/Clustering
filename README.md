@@ -9,6 +9,9 @@
 Need to go to extrait code to work
 
 ## Running the code
+```bash
+    python3 ./extrait-code/archive-code/Find-best-solution.py "DBSCAN" "3MC.arff"
+```
 
 ### Different options
 
@@ -65,5 +68,11 @@ Most of what happends is through the find-best-solution script
     -> search_k(path, name, showplot) : Select an appropriate number of clusters for k-means thanks to the elbow method
     -> distanceToNeighbors(path, name, v, showplot) : Finds an appropriate epsilon for DBSCAN by analyzing the average distance of points to their neighbors
     -> evaluate_runtime_DBSCAN(path, name) : Used to plot the runtime of multiple runs of DBSCAN with different values of epsilon.
+
+**Exemple:**
+
+```bash
+    python3 ./extrait-code/archive-code/Evaluate_DBSCAN_runtime.py '3MC.arff'
+```
 
 The results are written onto results.csv 

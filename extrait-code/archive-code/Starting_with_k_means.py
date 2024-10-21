@@ -82,7 +82,6 @@ def run_KMEANS_clustering(path, name, k, showplot):
 
             from sklearn.metrics.pairwise import euclidean_distances
             dists = euclidean_distances(centroids)
-            print(dists)
 
 
-run_KMEANS_clustering(_path, _name, 2, 1)
+# run_KMEANS_clustering(_path, _name, 2, 1)

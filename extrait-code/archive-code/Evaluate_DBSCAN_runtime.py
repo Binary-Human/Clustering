@@ -13,6 +13,7 @@ from Assessing_Neighbors import distanceToNeighbors
 import csv
 import pandas as pd
 import math
+import sys
 
 def evaluate_runtime_DBSCAN(path, name):
     """
@@ -26,9 +27,12 @@ def evaluate_runtime_DBSCAN(path, name):
         results_file.close()
 
     epsilon = distanceToNeighbors(path, name, 5, 0)
+    step = epsilon/10
+    e = 0 
 
-    for e in range(1, math.floor(epsilon)*2):      
-        run_DBSCAN_clustering(path, name, float(e), 5, 0, 0)
+    while (e<epsilon*2.0):
+        e += step 
+        run_DBSCAN_clustering(path, name, e, 5, 0, 0)
 
     data = pd.read_csv("results.csv")
 
@@ -44,4 +48,4 @@ def evaluate_runtime_DBSCAN(path, name):
     plt.legend()
     plt.show()
 
-evaluate_runtime_DBSCAN('./extrait-code/artificial/', "xclara.arff" )
+evaluate_runtime_DBSCAN('./extrait-code/artificial/', sys.argv[1] )

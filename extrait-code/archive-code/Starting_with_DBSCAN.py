@@ -71,10 +71,6 @@ def run_DBSCAN_clustering(path, name, epsilon, min_pts, showplot, standardized):
             print('Number of clusters: %d' % n_clusters)
             print('Number of noise points: %d' % n_noise)
 
-            # Entering data
-            results_writer = csv.writer(results_file)
-            results_writer.writerow([epsilon, runtime])
-
             if showplot :
                 plt.scatter(f0, f1, c=labels, s=8)
                 plt.title("Données après clustering DBSCAN (1) - Epislon= "+str(epsilon)+" MinPts= "+str(min_pts))
@@ -112,14 +108,14 @@ def run_DBSCAN_clustering(path, name, epsilon, min_pts, showplot, standardized):
             print('Number of clusters: %d' % n_clusters)
             print('Number of noise points: %d' % n_noise)
 
-            # Entering data
-            results_writer = csv.writer(results_file)
-            results_writer.writerow([epsilon, runtime])
-
             if showplot:
                 plt.scatter(f0_scaled, f1_scaled, c=labels, s=8)
                 plt.title("Données après clustering DBSCAN (2) - Epislon= "+str(epsilon)+" MinPts= "+str(min_pts))
                 plt.show() 
+
+        # Entering data
+        results_writer = csv.writer(results_file)
+        results_writer.writerow([epsilon, runtime])
 
 
 #run_DBSCAN_clustering(path, name, 1, 0)
