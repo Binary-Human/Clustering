@@ -1,0 +1,9 @@
+
+# Jeux de données
+artificial/
+
+# Fichier pour data processing
+results.csv
+
+# Byte-compiled Python
+archive-code/__pycache__/
