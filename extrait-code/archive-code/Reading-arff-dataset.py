@@ -23,7 +23,7 @@ from scipy.io import arff
 # chaque jeu de données contient aussi un numéro de cluster : on ignore
 
 
-path = './artificial/'
+path = './extrait-code/artificial/'
 name="square1.arff"
 #path_out = './fig/'
 

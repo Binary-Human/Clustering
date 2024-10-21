@@ -11,7 +11,7 @@ from sklearn import metrics
 # Exemple : Agglomerative Clustering
 
 
-path = './artificial/'
+path = './extrait-code/artificial/'
 name="3-spiral.arff"
 
 #path_out = './fig/'

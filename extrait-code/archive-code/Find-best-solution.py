@@ -49,4 +49,4 @@ def evaluate(k_max, algo, path, name):
 # Récupere les données du runtime et inertie
 
 # Comment faire quand ca n'est pas straightforward ?
-evaluate(10, "DBSCAN",'./artificial/', "xclara.arff" )
+evaluate(10, "DBSCAN",'./extrait-code/artificial/', "xclara.arff" )

@@ -18,6 +18,7 @@ def evaluate_runtime_DBSCAN(path, name):
     """
         Evaluates runtime of DBSCAN for various values of epsilon on given dataset
     """
+
     with open('results.csv', 'w', newline='') as results_file :
         writer = csv.writer(results_file)
 
@@ -43,4 +44,4 @@ def evaluate_runtime_DBSCAN(path, name):
     plt.legend()
     plt.show()
 
-evaluate_runtime_DBSCAN('./artificial/', "xclara.arff" )
+evaluate_runtime_DBSCAN('./extrait-code/artificial/', "xclara.arff" )

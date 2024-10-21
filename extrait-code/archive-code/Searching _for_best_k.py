@@ -16,7 +16,7 @@ from Starting_with_k_means import run_KMEANS_clustering
 
 import kneed
 
-_path = './artificial/'
+_path = './extrait-code/artificial/'
 _name="banana.arff"
 
 def search_k(path, name, showplot):

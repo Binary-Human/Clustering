@@ -11,7 +11,7 @@ from sklearn import neighbors
 ##################################################################
 # Exemple :  Dendrogramme and Agglomerative Clustering
 
-path = './artificial/'
+path = './extrait-code/artificial/'
 name="xclara.arff"
 
 #path_out = './fig/'

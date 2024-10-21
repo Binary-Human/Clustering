@@ -19,7 +19,7 @@ from sklearn import metrics
 ##################################################################
 # Exemple :  k-Means Clustering
 
-_path = './artificial/'
+_path = './extrait-code/artificial/'
 _name="banana.arff"
 
 def run_KMEANS_clustering(path, name, k, showplot):

@@ -15,7 +15,7 @@ from Assessing_Neighbors import distanceToNeighbors
 # Exemple : DBSCAN Clustering
 
 
-path = './artificial/'
+path = './extrait-code/artificial/'
 name="xclara.arff"
 
 # Nombre de voisins plus proches pour détermines epsilon
