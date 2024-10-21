@@ -44,7 +44,7 @@ def distanceToNeighbors(path, name, v, showplot) :
     distancetrie = np.sort(newDistances) 
 
     if showplot :
-        plt.title(f"Distances aux {str(k)} proches voisins pour tous les points" )
+        plt.title(f"Distances aux {str(v)} proches voisins pour tous les points" )
         plt.xlabel('"id" du point dans le modèle')
         plt.ylabel("distance")
         plt.plot(distancetrie)

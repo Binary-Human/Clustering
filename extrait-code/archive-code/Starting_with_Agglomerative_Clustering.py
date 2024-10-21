@@ -12,7 +12,7 @@ from sklearn import metrics
 
 
 path = './artificial/'
-name="xclara.arff"
+name="3-spiral.arff"
 
 #path_out = './fig/'
 databrut = arff.loadarff(open(path+str(name), 'r'))

@@ -53,9 +53,8 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             print("------------------------------------------------------")
             print("Appel DBSCAN (1) ... ")
             tps1 = time.time()
-            epsilon= distanceToNeighbors(path, name, v)
-            print("THIS IS EPSILON: ", epsilon)
-            min_pts= 5 #5   # 10
+            epsilon = distanceToNeighbors(path, name, v, 1)
+            min_pts= v #5   # 10
             model = cluster.DBSCAN(eps=epsilon, min_samples=min_pts)
             model.fit(datanp)
             tps2 = time.time()
@@ -64,6 +63,8 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             # Number of clusters in labels, ignoring noise if present.
             n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
             n_noise = list(labels).count(-1)
+            print("Chosen epsilon: ", epsilon)
+            print("Minimum points: ", v)
             print('Number of clusters: %d' % n_clusters)
             print('Number of noise points: %d' % n_noise)
 
@@ -91,8 +92,8 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             print("------------------------------------------------------")
             print("Appel DBSCAN (2) sur données standardisees ... ")
             tps1 = time.time()
-            epsilon= 0.15 #0.05
-            min_pts= 5 # 10
+            epsilon= distanceToNeighbors(path, name, v, 1)
+            min_pts= v # 10
             model = cluster.DBSCAN(eps=epsilon, min_samples=min_pts)
             model.fit(data_scaled)
 
@@ -110,7 +111,7 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
                 plt.show() 
 
 
-run_DBSCAN_clustering(path, name, 1, 0)
-run_DBSCAN_clustering(path, name, 1, 1)
+#run_DBSCAN_clustering(path, name, 1, 0)
+#run_DBSCAN_clustering(path, name, 1, 1)
 
 
