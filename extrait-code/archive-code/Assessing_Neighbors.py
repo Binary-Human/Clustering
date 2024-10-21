@@ -7,6 +7,7 @@ import time
 import pandas as pd
 
 import csv
+import math
 
 from scipy.io import arff
 from sklearn import cluster
@@ -50,7 +51,7 @@ def distanceToNeighbors(path, name, v, showplot) :
         plt.plot(distancetrie)
         plt.show()
 
-    return np.percentile(distancetrie,98)
+    return math.floor(np.percentile(distancetrie,98))
 
 
 

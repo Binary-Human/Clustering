@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import csv
 
 from scipy.io import arff
 from sklearn import cluster
@@ -20,7 +21,9 @@ name="xclara.arff"
 # Nombre de voisins plus proches pour détermines epsilon
 v = 5
 
-def run_DBSCAN_clustering(path, name, showplot, standardized):
+def run_DBSCAN_clustering(path, name, epsilon, min_pts, showplot, standardized):
+
+    #epsilon = distanceToNeighbors(path, name, v, 1)
 
     #path_out = './fig/'
     databrut = arff.loadarff(open(path+str(name), 'r'))
@@ -53,12 +56,12 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             print("------------------------------------------------------")
             print("Appel DBSCAN (1) ... ")
             tps1 = time.time()
-            epsilon = distanceToNeighbors(path, name, v, 1)
             min_pts= v #5   # 10
             model = cluster.DBSCAN(eps=epsilon, min_samples=min_pts)
             model.fit(datanp)
             tps2 = time.time()
             labels = model.labels_
+            runtime = round((tps2 - tps1)*1000,2)
 
             # Number of clusters in labels, ignoring noise if present.
             n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
@@ -67,6 +70,10 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             print("Minimum points: ", v)
             print('Number of clusters: %d' % n_clusters)
             print('Number of noise points: %d' % n_noise)
+
+            # Entering data
+            results_writer = csv.writer(results_file)
+            results_writer.writerow([epsilon, runtime])
 
             if showplot :
                 plt.scatter(f0, f1, c=labels, s=8)
@@ -92,18 +99,22 @@ def run_DBSCAN_clustering(path, name, showplot, standardized):
             print("------------------------------------------------------")
             print("Appel DBSCAN (2) sur données standardisees ... ")
             tps1 = time.time()
-            epsilon= distanceToNeighbors(path, name, v, 1)
             min_pts= v # 10
             model = cluster.DBSCAN(eps=epsilon, min_samples=min_pts)
             model.fit(data_scaled)
-
             tps2 = time.time()
             labels = model.labels_
+            runtime = round((tps2 - tps1)*1000,2)
+
             # Number of clusters in labels, ignoring noise if present.
             n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
             n_noise = list(labels).count(-1)
             print('Number of clusters: %d' % n_clusters)
             print('Number of noise points: %d' % n_noise)
+
+            # Entering data
+            results_writer = csv.writer(results_file)
+            results_writer.writerow([epsilon, runtime])
 
             if showplot:
                 plt.scatter(f0_scaled, f1_scaled, c=labels, s=8)
