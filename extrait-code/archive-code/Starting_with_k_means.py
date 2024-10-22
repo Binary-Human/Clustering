@@ -23,6 +23,10 @@ _path = './extrait-code/artificial/'
 _name="banana.arff"
 
 def run_KMEANS_clustering(path, name, k, showplot):
+    """
+        Runs k-means for given parameters. Writes the results onto results.csv
+        - Showplot : Boolean to show the graph of dataset Before and after clustering
+    """
     #path_out = './fig/'
     databrut = arff.loadarff(open(path+str(name), 'r'))
     datanp = np.array([[x[0],x[1]] for x in databrut[0]])

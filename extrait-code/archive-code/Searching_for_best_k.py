@@ -22,6 +22,10 @@ _path = './extrait-code/artificial/'
 _name="banana.arff"
 
 def search_k(path, name, showplot):
+    """
+        Runs k-means multiple time with different values of k to find the most suitable k, thanks to the elbow method
+        - Showplot : Boolean to show the graph corresponding the evolution of inertia and runtime
+    """
 
     with open('results.csv', 'w', newline='') as results_file :
         writer = csv.writer(results_file)
@@ -62,7 +66,7 @@ def search_k(path, name, showplot):
         plt.grid(True)
         plt.legend()
         plt.show()
-    kneedle = KneeLocator(k_values, inertia, S= 1, curve='convex', direction='decreasing')  
+    kneedle = KneeLocator(k_values, inertia, S = 1, curve='convex', direction='decreasing')  
     return kneedle.knee
 
 # print(search_k(_path, "xclara.arff" , 1))

@@ -15,6 +15,11 @@ from sklearn import metrics
 from sklearn.neighbors import NearestNeighbors
  
 def distanceToNeighbors(path, name, v, showplot) :
+    """
+        Assess the average distance of the dataset's points to their v neighbors
+        
+        - Showplot : Boolean to show the graph corresponding the said distance
+    """
     #path_out = './fig/'
     databrut = arff.loadarff(open(path+str(name), 'r'))
     datanp = np.array([[x[0],x[1]] for x in databrut[0]])
