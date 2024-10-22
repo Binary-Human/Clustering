@@ -25,7 +25,6 @@ conda list
 ```
 
 ## Running the code
-
 ```bash
     python3 ./extrait-code/archive-code/Find-best-solution.py [Algorithm] "[Dataset]
 ```
@@ -42,10 +41,10 @@ Most of what happens is through the find-best-solution script
 
 ### Utility functions:
 
-- search_k(path, name, showplot) : Select an appropriate number of clusters for k-means thanks to the elbow method
-- optimal_k_silhouette(path, name, showplot) : Select an appropriate number of clusters for k-means by analysing the silhouette index [The one that is effectively used]
-- distanceToNeighbors(path, name, v, showplot) : Finds an appropriate epsilon for DBSCAN by analyzing the average distance of points to their neighbors
-- evaluate_runtime_DBSCAN(path, name) : Used to plot the runtime of multiple runs of DBSCAN with different values of epsilon.
+    - search_k(path, name, showplot) : Select an appropriate number of clusters for k-means thanks to the elbow method
+    - optimal_k_silhouette(path, name, showplot) : Select an appropriate number of clusters for k-means by analysing the silhouette index [The one that is effectively used]
+    - distanceToNeighbors(path, name, v, showplot) : Finds an appropriate epsilon for DBSCAN by analyzing the average distance of points to their neighbors
+    - evaluate_runtime_DBSCAN(path, name) : Used to plot the runtime of multiple runs of DBSCAN with different values of epsilon.
 
 **Exemple:**
 
