@@ -17,6 +17,11 @@ import math
 import sys
 
 def optimal_k_silhouette(path, name, showplot):
+    """
+        Evaluates best k value for given dataset, by analysing silhouette index
+        - Showplot : Boolean to show the graph corresponding the evolution of inertia and runtime
+    """
+
 
     # Define the range of clusters k to test
     k_values = range(2, 50)  # You can adjust the range depending on your needs
