@@ -11,11 +11,6 @@ from sklearn import metrics
 from sklearn.neighbors import NearestNeighbors
 from sklearn import preprocessing
 
-from Starting_with_k_means import run_KMEANS_clustering
-from Searching_for_best_k import search_k
-from Starting_with_DBSCAN import run_DBSCAN_clustering
-from Assessing_Neighbors import distanceToNeighbors
-
 import csv
 import pandas as pd
 import math
@@ -48,3 +43,5 @@ def optimal_k_silhouette(path, name, showplot):
         plt.show()
         
     return optimal_k
+
+optimal_k_silhouette('./extrait-code/artificial/', sys.argv[1], 1)

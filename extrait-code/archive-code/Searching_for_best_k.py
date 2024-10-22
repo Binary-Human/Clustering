@@ -69,4 +69,4 @@ def search_k(path, name, showplot):
     kneedle = KneeLocator(k_values, inertia, S = 1, curve='convex', direction='decreasing')  
     return kneedle.knee
 
-# print(search_k(_path, "xclara.arff" , 1))
+search_k('./extrait-code/artificial/', sys.argv[1], 1)

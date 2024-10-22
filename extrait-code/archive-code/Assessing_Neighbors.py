@@ -8,6 +8,7 @@ import pandas as pd
 
 import csv
 import math
+import sys
 
 from scipy.io import arff
 from sklearn import cluster
@@ -58,6 +59,4 @@ def distanceToNeighbors(path, name, v, showplot) :
 
     return np.percentile(distancetrie,98)
 
-
-
-
+distanceToNeighbors('./extrait-code/artificial/', sys.argv[1], sys.argv[2], 1)
