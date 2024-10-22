@@ -3,8 +3,6 @@
 
 ## Prerequisites
 
-## Libraries
-
 ### Before running
 
 Dowload datasets via this link, to easily test the code
