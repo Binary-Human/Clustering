@@ -19,7 +19,7 @@ import pandas as pd
 import math
 import sys
 
-def evaluate(algo, path, name):
+def evaluate(path, name, algo):
     """
     Executes and evaluates the specified clustering algorithm on the given dataset with the best parameters found.
 
@@ -33,16 +33,16 @@ def evaluate(algo, path, name):
 
     match algo:
         case "KMEANS":
-            run_KMEANS_clustering(path, name, optimal_k_silhouette(path, name, 1), 1)
+            run_KMEANS_clustering(path, name, optimal_k_silhouette(path, name, 0), 1)
 
         case "AGLO":
             results = 0
 
         case "DBSCAN":   
-            run_DBSCAN_clustering(path, name, distanceToNeighbors(path, name, v, 1),  v, 1, 0)
+            run_DBSCAN_clustering(path, name, distanceToNeighbors(path, name, v, 0),  v, 1, 0)
             
         case "DBSCAN-STD":
             # Additional concern to asses the number v of neighbors taken into account
-            run_DBSCAN_clustering(path, name, distanceToNeighbors(path, name, v, 1), v, 0, 1)
+            run_DBSCAN_clustering(path, name, distanceToNeighbors(path, name, v, 0), v, 0, 1)
 
-evaluate(sys.argv[1],'./extrait-code/artificial/', sys.argv[2] )
+evaluate('./extrait-code/artificial/', sys.argv[1], sys.argv[2] )

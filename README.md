@@ -24,7 +24,7 @@ conda list
 
 ## Running the code
 ```bash
-    python3 ./extrait-code/archive-code/Find-best-solution.py [Algorithm] "[Dataset]
+    python3 ./extrait-code/archive-code/Find-best-solution.py "[Dataset]" "[Algorithm]"
 ```
 
 ### Different options

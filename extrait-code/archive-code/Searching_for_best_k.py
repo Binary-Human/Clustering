@@ -54,7 +54,7 @@ def search_k(path, name, showplot):
     inertia = data['inertia']         # Inertia
 
     if showplot:
-        # Step 3: Create the first plot (Inertia vs K)
+        # Create the first plot (Inertia vs K)
         plt.figure(figsize=(10, 6))
         plt.plot(k_values, inertia, label='Inertia', marker='o', color='red')
         plt.title('Inertia vs Number of Clusters (K)')
@@ -64,7 +64,7 @@ def search_k(path, name, showplot):
         plt.legend()
         plt.show()
 
-        # Step 4: Create the second plot (Runtime vs K)
+        # Create the second plot (Runtime vs K)
         plt.figure(figsize=(10, 6))
         plt.plot(k_values, runtime, label='Runtime (ms)', marker='x', color='blue')
         plt.title('Runtime vs Number of Clusters (K)')
