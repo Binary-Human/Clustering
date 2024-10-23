@@ -21,7 +21,12 @@ import sys
 
 def evaluate(algo, path, name):
     """
-        Evaluates the best parameters tu run a given algorithm on a given data set
+    Executes and evaluates the specified clustering algorithm on the given dataset with the best parameters found.
+
+    Args:
+        algo (str): The clustering algorithm to use ("KMEANS", "DBSCAN", "DBSCAN-STD").
+        path (str): The path to the directory containing the data file.
+        name (str): The name of the data file (ARFF format).
     """
 
     v = 5

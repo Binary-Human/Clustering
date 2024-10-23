@@ -18,8 +18,15 @@ import sys
 
 def optimal_k_silhouette(path, name, showplot):
     """
-        Evaluates best k value for given dataset, by analysing silhouette index
-        - Showplot : Boolean to show the graph corresponding the evolution of inertia and runtime
+    Determines the optimal number of clusters (k) for K-Means using the silhouette score.
+
+    Args:
+        path (str): The path to the directory containing the data file.
+        name (str): The name of the data file (ARFF format).
+        showplot (bool): If True, displays a plot of silhouette scores vs k values.
+
+    Returns:
+        int: The optimal k value with the highest silhouette score.
     """
 
 

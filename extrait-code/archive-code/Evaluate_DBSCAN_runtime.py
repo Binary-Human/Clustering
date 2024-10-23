@@ -17,7 +17,11 @@ import sys
 
 def evaluate_runtime_DBSCAN(path, name):
     """
-        Evaluates runtime of DBSCAN for various values of epsilon on given dataset
+    Evaluates the runtime of the DBSCAN algorithm with varying epsilon values and plots the results.
+
+    Args:
+        path (str): The path to the directory containing the data file.
+        name (str): The name of the data file (ARFF format).
     """
 
     with open('results.csv', 'w', newline='') as results_file :

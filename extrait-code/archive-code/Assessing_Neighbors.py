@@ -17,10 +17,20 @@ from sklearn.neighbors import NearestNeighbors
  
 def distanceToNeighbors(path, name, v, showplot) :
     """
-        Assess the average distance of the dataset's points to their v neighbors
-        
-        - Showplot : Boolean to show the graph corresponding the said distance
+    Calculates the distance to the v-th nearest neighbor for each data point
+    and returns the 98th percentile of these distances. This can be used to 
+    estimate a suitable epsilon value for DBSCAN.
+
+    Args:
+        path (str): The path to the directory containing the data file.
+        name (str): The name of the data file (ARFF format).
+        v (int): The number of nearest neighbors to consider.
+        showplot (bool): If True, displays a plot of the sorted average distances.
+
+    Returns:
+        float: The 98th percentile of the average distances to the v nearest neighbors.
     """
+    
     #path_out = './fig/'
     databrut = arff.loadarff(open(path+str(name), 'r'))
     datanp = np.array([[x[0],x[1]] for x in databrut[0]])

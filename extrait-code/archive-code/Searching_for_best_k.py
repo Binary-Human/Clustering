@@ -23,8 +23,15 @@ _name="banana.arff"
 
 def search_k(path, name, showplot):
     """
-        Runs k-means multiple time with different values of k to find the most suitable k, thanks to the elbow method
-        - Showplot : Boolean to show the graph corresponding the evolution of inertia and runtime
+    Searches for the optimal number of clusters (k) for K-Means using the elbow method based on inertia.
+
+    Args:
+        path (str): The path to the directory containing the data file.
+        name (str): The name of the data file (ARFF format).
+        showplot (bool): If True, displays plots of inertia and runtime vs k values.
+
+    Returns:
+        int: The estimated optimal k value using the knee/elbow point detection.
     """
 
     with open('results.csv', 'w', newline='') as results_file :
